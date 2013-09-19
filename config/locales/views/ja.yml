@@ -1,0 +1,41 @@
+﻿
+ja:
+  will_paginate:
+    previous_label: "&lt; 前"
+    next_label: "次 &gt;"
+  Home: "ホーム"
+  Help: "ヘルプ"
+  Sign in: "ログイン"
+  Sign out: "ログアウト"
+  Sign up now!: "ユーザー登録"
+  Sign up: "ユーザー登録"
+  Users: "登録ユーザー"
+  New user?: "まだユーザー登録をしていませんか？"
+  Email: "メールアドレス"
+  Password: "パスワード"
+  About Us: "このアプリケーションについて"
+  Follow: "フォロー"
+  Unfollow: "フォロー解除"
+  All users: "ユーザー一覧"
+  Account: "アカウント"
+  Profile: "プロファイル"
+  Settings: "設定"
+  delete: "削除"
+  Microposts: "投稿"
+  Micropost Feed: "投稿一覧"
+  Save changes: "保存"
+  Post: "投稿"
+  Posted: ""
+  ago: "前"
+  You sure?: "よろしいですか？"
+  view my profile: "プロフィール"
+  Welcom to the Sample App: "Rails学習用マイクロブログ"
+  This is the Microblog home page for the Ichigo-Ichinen: "Ruby on Railsの学習用に作成したマイクロブログです。"
+  Password Confirmation: "パスワード(再確認)"
+  view:
+    about: "<p>このアプリケーションは一語一年のRuby学習を目的として作成されたものです。</p>
+            <p>Rubyへの入門として資料が見つけやすかった<a href='http://rubyonrails.org/'>Ruby on Rails</a>を使って作成しました。
+            <a href='http://railstutorial.org/'>Ruby on Rails Tutorial</a>をベースに日本語化対応とレスポンシブWeb対応を実施しています。</p>
+            <p>このアプリケーションのソースコードは<a href='https://github.com/oroshisoba/sample_app_2nd_ed/'>GitHub</a>で公開しています。</p>"
+    followers: "フォロワー"
+    following: "フォロー"

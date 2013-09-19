@@ -13,7 +13,7 @@ describe "User pages" do
       visit users_path
     end
 
-    it { should have_selector('title', text: 'All users') }
+    it { should have_selector('title', text: I18n.t('All users')) }
 
     describe "pagination" do
 
@@ -23,7 +23,7 @@ describe "User pages" do
       let(:first_page)  { User.paginate(page: 1) }
       let(:second_page) { User.paginate(page: 2) }
 
-      it { should have_link('Next') }
+      it { should have_link(I18n.t('Next')) }
       its(:html) { should match('>2</a>') }
 
       it "should list each user" do
@@ -66,11 +66,11 @@ describe "User pages" do
           visit users_path
         end
 
-        it { should have_link('delete', href: user_path(User.first)) }
+        it { should have_link(I18n.t('delete'), href: user_path(User.first)) }
         it "should be able to delete another user" do
-          expect { click_link('delete') }.to change(User, :count).by(-1)
+          expect { click_link(I18n.t('delete')) }.to change(User, :count).by(-1)
         end
-        it { should_not have_link('delete', href: user_path(admin)) }
+        it { should_not have_link(I18n.t('delete'), href: user_path(admin)) }
       end
     end
   end
@@ -100,18 +100,18 @@ describe "User pages" do
 
         it "should increment the followed user count" do
           expect do
-            click_button "Follow"
+            click_button I18n.t('Follow')
           end.to change(user.followed_users, :count).by(1)
         end
 
         it "should increment the other user's followers count" do
           expect do
-            click_button "Follow"
+            click_button I18n.t('Follow')
           end.to change(other_user.followers, :count).by(1)
         end
 
         describe "toggling the button" do
-          before { click_button "Follow" }
+          before { click_button I18n.t('Follow') }
           it { should have_selector('input', value: 'Unfollow') }
         end
       end
@@ -124,18 +124,18 @@ describe "User pages" do
 
         it "should decrement the followed user count" do
           expect do
-            click_button "Unfollow"
+            click_button I18n.t('Unfollow')
           end.to change(user.followed_users, :count).by(-1)
         end
 
         it "should decrement the other user's followers count" do
           expect do
-            click_button "Unfollow"
+            click_button I18n.t('Unfollow')
           end.to change(other_user.followers, :count).by(-1)
         end
 
         describe "toggling the button" do
-          before { click_button "Unfollow" }
+          before { click_button I18n.t('Unfollow') }
           it { should have_selector('input', value: 'Follow') }
         end
       end
@@ -145,8 +145,8 @@ describe "User pages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_selector('h1',    text: 'Sign up') }
-    it { should have_selector('title', text: full_title('Sign up')) }
+    it { should have_selector('h1',    text: I18n.t('Sign up')) }
+    it { should have_selector('title', text: full_title(I18n.t('Sign up'))) }
   end
 
   describe "signup" do
@@ -163,7 +163,7 @@ describe "User pages" do
       describe "error messages" do
         before { click_button submit }
 
-        it { should have_selector('title', text: 'Sign up') }
+        it { should have_selector('title', text: I18n.t('Sign up')) }
         it { should have_content('error') }
       end
     end
@@ -186,8 +186,8 @@ describe "User pages" do
         let(:user) { User.find_by_email('user@example.com') }
 
         it { should have_selector('title', text: user.name) }
-        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
-        it { should have_link('Sign out') }
+        it { should have_selector('div.alert.alert-success', text: I18n.t('Welcome')) }
+        it { should have_link(I18n.t('Sign out')) }
       end
     end
   end
@@ -200,13 +200,13 @@ describe "User pages" do
     end
 
     describe "page" do
-      it { should have_selector('h1',    text: "Update your profile") }
-      it { should have_selector('title', text: "Edit user") }
+      it { should have_selector('h1',    text: I18n.t('Update your profile')) }
+      it { should have_selector('title', text: I18n.t('Edit user')) }
       it { should have_link('change', href: 'http://gravatar.com/emails') }
     end
 
     describe "with invalid information" do
-      before { click_button "Save changes" }
+      before { click_button I18n.t('Save changes') }
 
       it { should have_content('error') }
     end
@@ -219,12 +219,12 @@ describe "User pages" do
         fill_in "Email",            with: new_email
         fill_in "Password",         with: user.password
         fill_in "Confirm Password", with: user.password
-        click_button "Save changes"
+        click_button I18n.t('Save changes')
       end
 
       it { should have_selector('title', text: new_name) }
       it { should have_selector('div.alert.alert-success') }
-      it { should have_link('Sign out', href: signout_path) }
+      it { should have_link(I18n.t('Sign out'), href: signout_path) }
       specify { user.reload.name.should  == new_name }
       specify { user.reload.email.should == new_email }
     end
@@ -241,8 +241,8 @@ describe "User pages" do
         visit following_user_path(user)
       end
 
-      it { should have_selector('title', text: full_title('Following')) }
-      it { should have_selector('h3', text: 'Following') }
+      it { should have_selector('title', text: full_title(I18n.t('Following'))) }
+      it { should have_selector('h3', text: I18n.t('Following')) }
       it { should have_link(other_user.name, href: user_path(other_user)) }
     end
 
@@ -252,8 +252,8 @@ describe "User pages" do
         visit followers_user_path(other_user)
       end
 
-      it { should have_selector('title', text: full_title('Followers')) }
-      it { should have_selector('h3', text: 'Followers') }
+      it { should have_selector('title', text: full_title(I18n.t('Followers'))) }
+      it { should have_selector('h3', text: I18n.t('Followers')) }
       it { should have_link(user.name, href: user_path(user)) }
     end
   end

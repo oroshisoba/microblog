@@ -1,0 +1,7 @@
+﻿ja:
+  view:
+    welcome: "Welcome to the Microblog for Rails Learning"
+    aboutapp: "This is the home page for the Ruby on Rails Tutorial sample application."
+    about: "<p>The Sample Application was made for Ichigo-Ichinne Ruby Lerning.</p>
+            This uses the <a href='http://rubyonrails.org/'>Ruby on Rails</a> this is one of the most popular frameworks.
+            This was based on <a href='http://railstutorial.org/'>Ruby on Rails Tutorial</a>."
