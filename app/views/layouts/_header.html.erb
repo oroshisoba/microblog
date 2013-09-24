@@ -1,11 +1,15 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "sample app", root_path, id: "logo" %>
+      <%= link_to "sample app", root_path, id: "logo", :class => "brand" %>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>      <div class="nav-collapse">
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to t('Home'), root_path %></li>
-          <!-- <li><%= link_to t('Help'), help_path %></li> -->
           <% if signed_in? %>
             <li><%= link_to t('Users'), users_path %></li>
             <li id="fat-menu" class="dropdown">
@@ -26,6 +30,7 @@
           <% end %>
         </ul>
       </nav>
+      </div>
     </div>
   </div>
 </header>

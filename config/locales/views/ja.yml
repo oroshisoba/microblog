@@ -24,14 +24,18 @@ ja:
   Microposts: "投稿"
   Micropost Feed: "投稿一覧"
   Save changes: "保存"
+  Micropost: "投稿"
   Post: "投稿"
   Posted: ""
   ago: "前"
   You sure?: "よろしいですか？"
+  Compose new micropost: "投稿してください"
+  Micropost created!: "投稿しました"
   view my profile: "プロフィール"
   Welcom to the Sample App: "Rails学習用マイクロブログ"
   This is the Microblog home page for the Ichigo-Ichinen: "Ruby on Railsの学習用に作成したマイクロブログです。"
   Password Confirmation: "パスワード(再確認)"
+  Create my account: "登録"
   view:
     about: "<p>このアプリケーションは一語一年のRuby学習を目的として作成されたものです。</p>
             <p>Rubyへの入門として資料が見つけやすかった<a href='http://rubyonrails.org/'>Ruby on Rails</a>を使って作成しました。

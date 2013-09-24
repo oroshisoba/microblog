@@ -1,7 +1,5 @@
 @import "bootstrap";
 
-/* Overwrite body style before bootstrap-responsive.  */
-
 body {
   padding-top: 60px;
 }
@@ -36,9 +34,6 @@ html {
   overflow-y: scroll;
 }
 
-body {
-  padding-top: 60px;
-}
 
 section {
   overflow: auto;
